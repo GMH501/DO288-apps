@@ -1,10 +1,10 @@
 from flask import Flask, render_template, jsonify
 
-app = Flask(__file__)
+app = Flask(__name__)
 
 
-@route("/")
+@app.route("/")
 def index():
     return render_template("index.html")
 
-app.run()
+app.run(host="0.0.0.0", port=8080)
